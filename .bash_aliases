@@ -1,4 +1,5 @@
 randomprideful() {
-	availableprideflags=("classic" "pastel" "les" "gay" "bi" "trans" "enby" "agen" "ace" "aro" "pan" "queer")
+	availableprideflags=($(prideful -l | awk '{print $1}' | tail -n 12))
 	prideful --compact ${availableprideflags[$(shuf -i 0-11 -n 1)]}
 }
+
